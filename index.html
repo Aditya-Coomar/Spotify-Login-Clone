@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- header section -->
+<head>
+
+	
+	<!-- meta tags - start -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="keywords" content=""> <!-- to be filled... -->
+	<meta name="author" content="Spotify_Clone">
+	<!-- meta tags - end -->
+
+	<link href="https://db.onlinewebfonts.com/c/961a181da27e7cbc072ec2fb5bbfe2a9?family=Circular+Std+Bold" rel="stylesheet" type="text/css"/>
+
+	<!-- scripts/stylesheet/apis start -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baskerville|Andika|Arvo|Roboto|Lora">
+	<link rel="stylesheet" type="text/css" href="font.css" charset="utf-8">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+
+	<!-- Font Awesome -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"/>
+	<script src="https://kit.fontawesome.com/05168aa044.js" crossorigin="anonymous"></script>
+
+	<!-- Jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+
+
+	
+
+	<!-- scripts/stylesheet/apis end -->
+
+	<title>Login - Spotify</title>
+	<link rel="icon" href="https://accounts.scdn.co/sso/images/favicon.ace4d8543bbb017893402a1e9d1ac1fa.ico">
+
+	<!-- style tag starts -->
+	<style>
+
+		@media only screen and (min-width: 720px){
+			.screen-sm{
+				display: none;
+			}
+			
+		}
+
+		@media only screen and (max-width: 720px){
+			.screen-lg{
+				display: none;
+			}
+			
+		}
+
+		@media only screen and (max-width: 1000px){
+			.head_custom{
+				font-size: 4vw;
+			}
+		}
+		@media only screen and (min-width: 1000px){
+			.head_custom{
+				font-size: 3.4vw;
+			}
+		}
+
+		.navbar-custom{
+			background-color: black;
+		}
+
+		.body-custom{
+			background-image: linear-gradient(rgba(0, 0, 0,0.9), rgba(0,0,0,1));
+			height: 100%;
+		}
+
+		body{
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+		}
+
+		.wrapper{
+			flex: 1;
+		}
+
+		.card-custom{
+			background-color: black;
+			color: white;
+		}
+
+		.btn-custom{
+			background-color: black;
+			color: white;
+			cursor: default;
+			border-radius: 25px;
+			border-color: rgba(255, 255, 255, 0.4);
+			padding-block: 11px;
+			padding-inline: 10px;
+		}
+		.btn-custom:hover{
+			border-color: white;
+			cursor: default;
+		}
+
+		.btn-text{
+			font-weight: bold;
+			margin-left: -5%;
+		}
+
+		.login-seperator{
+			background-color: rgba(0,0,0,0.8);
+			width: 80%;
+			height: 0.5px;
+			margin: 0 auto;
+			border-color: rgba(255,255,255,0.6);
+		}
+
+		.custom-lable{
+			font-weight: bold;
+			font-size: 14px;
+		}
+
+		.custom-input{
+			background-color: #121212;
+			padding-block: 11.5px;
+			border-radius: 5px;
+			border-color: rgba(255,255,255,0.5);
+		}
+
+		.custom-input::placeholder{
+			color: rgba(255,255,255,0.5);
+			font-weight: 500;
+			
+		}
+
+		.custom-input:focus{
+			background-color: #121212;
+			padding-block: 11.5px;
+			border-radius: 5px;
+			border-color: white;
+			border-width: 3px;
+			color: white;
+		}
+
+		.custom-input:hover{
+			padding-block: 11.5px;
+			border-color: white;
+			border-width: 1px;
+			color: white;
+		}
+
+		.password-toggle{
+			color: rgba(255,255,255,0.7);
+			font-weight: bold;
+			display: inline-block;
+			margin-left: 30px;
+			background-color: #121212;
+			border-style: none;
+			border-left: none;
+			font-size: 24px;
+			
+		}
+
+		.pwd-grp{
+			border-radius: 5px;
+			border-color: rgba(255,255,255,0.5);
+			border-style: solid;
+			border-width: 1px;
+			background-color: #121212;
+		}
+
+		.pwd-input{
+			background-color: #121212;
+			padding-block: 11.5px;
+			border-radius: 5px;
+			border-color: rgba(255,255,255,0.5);
+		}
+
+		.pwd-input::placeholder{
+			color: rgba(255,255,255,0.5);
+			font-weight: 500;
+			
+		}
+
+		.pwd-input:focus{
+			background-color: #121212;
+			padding-block: 10.5px;
+			border-radius: 5px;
+			border-style: none;
+			color: white;
+			box-shadow: none;
+		}
+
+		.pwd-grp:active{
+			border-radius: 5px;
+			border-color: white;
+		}
+
+		.pwd-grp:hover{
+			border-radius: 5px;
+			border-color: white;
+		}
+
+		.custom-toggle{
+			background-color: #000000;
+		}
+
+		.login-btn-custom{
+			background-color: rgba(30,215,96,1);
+			color: black;
+			cursor: default;
+			font-family: Circular Std Bold;
+			border-radius: 25px;
+			padding-block: 11px;
+			padding-inline: 10px;
+			transition: all .05s ease-in-out;
+		}
+		.login-btn-custom:hover{
+			background-color: rgba(30,215,96,1);
+			color: black;
+			cursor: default;
+			border-radius: 25px;
+			padding-block: 11px;
+			padding-inline: 10px;
+			font-weight: bolder;
+			transform: scale(1.03); 
+		}
+
+		.link{
+			color: white;
+			font-family: Circular Std Bold;
+			margin-top: -10px;
+		}
+		.link:hover{
+			text-decoration: underline;
+			text-decoration-color: rgba(30,215,96,1);
+		}
+
+		.link-1{
+			color: white;
+			font-family: Circular Std Bold;
+		}
+		.link-1:hover{
+			color: rgba(30,215,96,1);
+		}
+
+		.switch {
+			position: relative;
+			display: block;
+			width: 30px;
+			height: 16px;
+		}
+		
+		.switch input {
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+
+		.slider {
+			position: absolute;
+            cursor: default;
+            top: 0;
+			left: 0;
+			right: 0;
+            bottom: 0;
+			background-color: rgba(255,255,255,0.5);
+			-webkit-transition: .4s;
+			transition: .4s;
+		}
+
+		.slider:before {
+			position: absolute;
+			content: "";
+			height: 12px;
+			width: 12px;
+			left: 2px;
+			bottom: 1.5px;
+			background-color: black;
+			-webkit-transition: .4s;
+			transition: .4s;
+		}
+
+		input:checked + .slider {
+			background-color:  rgba(30,215,96,1);
+		}
+
+		input:checked + .slider:before {
+			-webkit-transform: translateX(14px);
+			-ms-transform: translateX(14px);
+			transform: translateX(14px);
+		}
+
+		/* Rounded sliders */
+		.slider.round {
+			border-radius: 34px;
+		}
+
+		.slider.round:before {
+			border-radius: 50%;
+		}
+
+		.toggle-lable{
+			font-family: Circular Std Bold;
+		}
+
+
+
+		
+		
+
+	</style>
+	<!-- style tag ends -->
+
+</head>
+
+<!-- body starts --> 
+<body class="body-custom">
+
+	<nav class="navbar navbar-custom">
+		<div class="container-fluid">
+			<a class="screen-lg navbar-brand" href="#" style="padding: 20px 40px;">
+				<img src="./spotify-logo-branca-white.webp" alt="Spotify" style="width: 110px; height: 35px;">
+			</a>
+			<a class="navbar-brand screen-sm" href="#" style="padding: 30px 20px;">
+				<img src="./spotify-logo-branca-white.webp" alt="Spotify" style="width: 78px; height: 25px;">
+			</a>
+		</div>
+	</nav>
+	<div class="content wrapper">
+		<div class="screen-lg" style="padding-top: 35px;">
+			<div class="card text-center mb-3 card-custom container-fluid" style="max-width: max-content;">
+				<div class="card-body">
+					<h1 class="card-title head_custom" style="font-weight: bold; padding-block: 55px 34px; padding-inline: 200px 200px; font-family: Circular Std Bold;">
+						Log in to Spotify
+					</h1>
+					<p class="card-text">
+						<div class="d-grid gap-2 mx-auto" style="max-width: 350px;">
+							<button class="btn btn-custom" type="button" role="button" onclick="continuewithgoogle()">
+								<div class="row">
+									<div class="col-3">
+										<svg focusable="false" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="24" viewBox="0 0 48 48">
+											<path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+										</svg>
+									</div>
+									<div class="col-8 btn-text">Continue with Google</div>
+								</div>					
+							</button>
+							<button class="btn btn-custom" type="button" role="button" onclick="continuewithfacebook()">
+								<div class="row">
+									<div class="col-3">
+										<svg focusable="false" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48">
+											<linearGradient id="Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1" x1="9.993" x2="40.615" y1="9.993" y2="40.615" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2aa4f4"></stop><stop offset="1" stop-color="#007ad9"></stop></linearGradient><path fill="url(#Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1)" d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z"></path><path fill="#fff" d="M26.707,29.301h5.176l0.813-5.258h-5.989v-2.874c0-2.184,0.714-4.121,2.757-4.121h3.283V12.46 c-0.577-0.078-1.797-0.248-4.102-0.248c-4.814,0-7.636,2.542-7.636,8.334v3.498H16.06v5.258h4.948v14.452 C21.988,43.9,22.981,44,24,44c0.921,0,1.82-0.084,2.707-0.204V29.301z"></path>
+										</svg>
+									</div>
+									<div class="col-8 btn-text">Continue with Facebook</div>
+								</div>					
+							</button>
+							<button class="btn btn-custom" type="button" role="button" onclick="continuewithapple()">
+								<div class="row">
+									<div class="col-3">
+										<svg focusable="false" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
+											<g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M44.52734,34.75c-1.07812,2.39453 -1.59766,3.46484 -2.98437,5.57813c-1.94141,2.95313 -4.67969,6.64063 -8.0625,6.66406c-3.01172,0.02734 -3.78906,-1.96484 -7.87891,-1.92969c-4.08594,0.01953 -4.9375,1.96875 -7.95312,1.9375c-3.38672,-0.03125 -5.97656,-3.35156 -7.91797,-6.30078c-5.42969,-8.26953 -6.00391,-17.96484 -2.64844,-23.12109c2.375,-3.65625 6.12891,-5.80469 9.65625,-5.80469c3.59375,0 5.85156,1.97266 8.82031,1.97266c2.88281,0 4.63672,-1.97656 8.79297,-1.97656c3.14063,0 6.46094,1.71094 8.83594,4.66406c-7.76562,4.25781 -6.50391,15.34766 1.33984,18.31641zM31.19531,8.46875c1.51172,-1.94141 2.66016,-4.67969 2.24219,-7.46875c-2.46484,0.16797 -5.34766,1.74219 -7.03125,3.78125c-1.52734,1.85938 -2.79297,4.61719 -2.30078,7.28516c2.69141,0.08594 5.47656,-1.51953 7.08984,-3.59766z"></path></g></g>
+										</svg>
+									</div>
+									<div class="col-8 btn-text">Continue with Apple</div>
+								</div>					
+							</button>
+							<button class="btn btn-custom" type="button" role="button" onclick="continuewithphonenumber()">
+								<span class="btn-text">Continue with phone number</span>					
+							</button>
+						</div>
+						<div style="padding-block: 35px;">
+							<div class="row">
+								<div class="col-12">
+									<hr class="login-seperator">
+								</div>
+							</div>
+						</div>
+						<div class="card mx-auto card-custom" style="max-width: 350px; margin-top: -8px;">
+							<form>
+								<div>
+									<div style="max-width: fit-content;">
+										<label for="exampleInputEmail1" class="form-label custom-lable">Email or username</label>
+									</div>
+									<div class="col-12">
+										<input type="email" class="form-control custom-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email or username">
+									</div>
+								</div>
+								<div style="padding-top: 11px;">
+									<div style="max-width: fit-content;">
+										<label for="exampleInputPassword1" class="form-label custom-lable">Password</label>
+									</div>
+									<div class="col-12">
+										<div class="input-group mb-3 pwd-grp">
+											<input type="password" style="border-style: none;" class="form-control pwd-input" id="exampleInputPassword1" placeholder="Password"/>
+											<button class="bi bi-eye-slash password-toggle input-group-text"></button>
+										</div>
+									</div>
+								</div>
+								<div class="col-12" style="max-width: fit-content;">
+									<table>
+										<tbody>
+											<td>
+												<div>
+													<label class="switch" id="rem-me">
+														<input type="checkbox" checked><span class="slider round"></span>
+													</label>
+											    </div>
+											</td>
+											<td>
+												<div><label class="toggle-lable">&nbsp;Remember me</label></div>
+											</td>
+										</tbody>
+									</table>
+								</div>
+								<div class="d-grid mx-auto" style="max-width: 350px; padding-top: 40px;">
+									<button class="btn login-btn-custom" type="button" role="button" onclick="loginmsg()">
+										<span class="btn-text">Log In</span>					
+									</button>
+								</div>
+							</form>
+						</div>
+						<div style="padding-top: 30px;">
+							<a class="link" href="https://accounts.spotify.com/en/password-reset?flow_ctx=bc645f0b-261f-4135-8ad4-e78109493844%3A1694299545">
+								Forgot your password?
+							</a>
+						</div>
+						<div style="padding-top: 30px;">
+							<div class="row">
+								<div class="col-12">
+									<hr class="login-seperator">
+								</div>
+							</div>
+						</div>
+						<div style="padding-top: 50px; color: rgba(255,255,255,0.6);">
+							Don't have an account?&nbsp;<a class="link-1" href="https://www.spotify.com/in-en/signup?flow_id=d164b697-44fd-4b25-a0ef-73a0727fe52a%3A1694299584&forward_url=https%3A%2F%2Fopen.spotify.com%2F%3Fflow_ctx%3Dd164b697-44fd-4b25-a0ef-73a0727fe52a%253A1694299584">Sign up for Spotify</a>
+						</div>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="screen-sm" style="max-width: 720px; height: 100vh; background-color: black;">
+			<div class="card card-custom">
+				<div style="padding: 0px 30px; font-family: Circular Std Bold;">
+					<h1>Log in to Spotify</h1>
+				</div>
+				<div class="" style="padding: 30px;">
+					<div class="d-grid col-12 gap-2">
+						<button class="btn btn-custom" type="button" role="button" onclick="continuewithgoogle()">
+							<div class="row">
+								<div class="col-1">
+									<svg focusable="false" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="24" viewBox="0 0 48 48">
+										<path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+									</svg>
+								</div>
+								<div class="col-11 btn-text">Continue with Google</div>
+							</div>					
+						</button>
+						<button class="btn btn-custom" type="button" role="button" onclick="continuewithfacebook()">
+							<div class="row">
+								<div class="col-1">
+									<svg focusable="false" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48">
+										<linearGradient id="Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1" x1="9.993" x2="40.615" y1="9.993" y2="40.615" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2aa4f4"></stop><stop offset="1" stop-color="#007ad9"></stop></linearGradient><path fill="url(#Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1)" d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z"></path><path fill="#fff" d="M26.707,29.301h5.176l0.813-5.258h-5.989v-2.874c0-2.184,0.714-4.121,2.757-4.121h3.283V12.46 c-0.577-0.078-1.797-0.248-4.102-0.248c-4.814,0-7.636,2.542-7.636,8.334v3.498H16.06v5.258h4.948v14.452 C21.988,43.9,22.981,44,24,44c0.921,0,1.82-0.084,2.707-0.204V29.301z"></path>
+									</svg>
+								</div>
+								<div class="col-11 btn-text">Continue with Facebook</div>
+							</div>					
+						</button>
+						<button class="btn btn-custom" type="button" role="button" onclick="continuewithapple()">
+							<div class="row">
+								<div class="col-1">
+									<svg focusable="false" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
+										<g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M44.52734,34.75c-1.07812,2.39453 -1.59766,3.46484 -2.98437,5.57813c-1.94141,2.95313 -4.67969,6.64063 -8.0625,6.66406c-3.01172,0.02734 -3.78906,-1.96484 -7.87891,-1.92969c-4.08594,0.01953 -4.9375,1.96875 -7.95312,1.9375c-3.38672,-0.03125 -5.97656,-3.35156 -7.91797,-6.30078c-5.42969,-8.26953 -6.00391,-17.96484 -2.64844,-23.12109c2.375,-3.65625 6.12891,-5.80469 9.65625,-5.80469c3.59375,0 5.85156,1.97266 8.82031,1.97266c2.88281,0 4.63672,-1.97656 8.79297,-1.97656c3.14063,0 6.46094,1.71094 8.83594,4.66406c-7.76562,4.25781 -6.50391,15.34766 1.33984,18.31641zM31.19531,8.46875c1.51172,-1.94141 2.66016,-4.67969 2.24219,-7.46875c-2.46484,0.16797 -5.34766,1.74219 -7.03125,3.78125c-1.52734,1.85938 -2.79297,4.61719 -2.30078,7.28516c2.69141,0.08594 5.47656,-1.51953 7.08984,-3.59766z"></path></g></g>
+									</svg>
+								</div>
+								<div class="col-11 btn-text">Continue with Apple</div>
+							</div>					
+						</button>
+						<button class="btn btn-custom" type="button" role="button" onclick="continuewithphonenumber()">
+							<div class="col-14 btn-text">&emsp;Continue with phone number</div>					
+						</button>
+					</div>
+				</div>
+				<div>
+					<div class="col-12" style="padding: 20px 30px;">
+						<hr class="login-seperator" style="width: 100%;">
+					</div>
+				</div>
+				<div>
+					<div class="card mx-auto card-custom" style="margin-top: -8px; padding: 20px 30px;">
+						<form>
+							<div>
+								<div style="max-width: fit-content;">
+									<label for="exampleInputEmail1" class="form-label custom-lable">Email or username</label>
+								</div>
+								<div class="col-12">
+									<input type="email" class="form-control custom-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email or username">
+								</div>
+							</div>
+							<div style="padding-top: 11px;">
+								<div style="max-width: fit-content;">
+									<label for="exampleInputPassword1" class="form-label custom-lable">Password</label>
+								</div>
+								<div class="col-12">
+									<div class="input-group mb-3 pwd-grp">
+										<input type="password" style="border-style: none;" class="form-control pwd-input" id="exampleInputPassword1" placeholder="Password"/>
+										<button class="bi bi-eye-slash password-toggle input-group-text"></button>
+									</div>
+								</div>
+							</div>
+							<div class="col-12" style="max-width: fit-content;">
+								<table>
+									<tbody>
+										<td>
+											<div>
+												<label class="switch" id="rem-me">
+													<input type="checkbox" checked><span class="slider round"></span>
+												</label>
+											</div>
+										</td>
+										<td>
+											<div><label class="toggle-lable">&nbsp;Remember me</label></div>
+										</td>
+									</tbody>
+								</table>
+							</div>
+							<div class="d-grid mx-auto" style="padding-top: 40px;">
+								<button class="btn login-btn-custom" type="button" role="button" onclick="loginmsg()">
+									<span class="btn-text">Log In</span>					
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="text-center">
+					<div style="padding-top: 10px;">
+						<a class="link" href="https://accounts.spotify.com/en/password-reset?flow_ctx=bc645f0b-261f-4135-8ad4-e78109493844%3A1694299545">
+							Forgot your password?
+						</a>
+					</div>
+				</div>
+				<div class="text-center" style="padding: 15px;">
+					<div style="color: rgba(255,255,255,0.6);">
+						Don't have an account?
+					</div>
+					<div style="padding-top: 4px;">
+						<a class="link-1" href="https://www.spotify.com/in-en/signup?flow_id=d164b697-44fd-4b25-a0ef-73a0727fe52a%3A1694299584&forward_url=https%3A%2F%2Fopen.spotify.com%2F%3Fflow_ctx%3Dd164b697-44fd-4b25-a0ef-73a0727fe52a%253A1694299584">Sign up for Spotify</a>
+					</div>
+				</div>
+				<br>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		function continuewithgoogle() {
+			window.open("https://accounts.google.com/v3/signin/identifier?opparams=%253F&dsh=S956440821%3A1694277456788121&access_type=offline&client_id=1046568431490-ij1gi5shcp2gtorls09frkc56d4mjbe2.apps.googleusercontent.com&o2v=2&redirect_uri=https%3A%2F%2Faccounts.spotify.com%2Flogin%2Fgoogle%2Fredirect&response_type=code&scope=profile+email+openid&service=lso&state=AQB2t49ZVG0QoX0Z3nyG6WbyZjpfvkuUMt2m3vRa8Nvtlwg6c4pZfQoOsk03wvvPKM%2FvX%2B1Ip57LMF2yj7L1wMoaM%2BJ9zK%2Bhb7HBzRdhxrDEr27%2Fajy4O84fdYOemo3Yb07czaqzRNsqRV5m5tZaAw2rLHvHOSr7cg3t6g2lPo8TaIh%2BomfYNCHR6ocNrN7%2FvG70aLT2Mle5mKCFAni2BeoQHu6%2BY7gBS8hLLRSBRd5UYFIXovrrqzleYn%2B0e5zFgFq%2Ffm5YaUDilWIuucF%2B3Zn9979F6GG2T8piD%2BPXkJlaWzga1bnoawED9ecLv5h0f1LwoHQjwwJxqUDs2QQYTbd7%2FS6bRw%3D%3D&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAMZd6RXPIOWxCvO0PKtyyYYfL-C5JI-SFWC5C8cpKIjoPAKTZQ5lr5GIgv_8lWiVAWnkW2jFhax5b-9zFyG3w4oQJzsXJlGmd0MBbyqScuC2QQ8rEoeNEqjrcmLXuRTB-Y5tyK1ktaxEB3jEMCNw5kG-z5ty5PZbVUX2vGU308U0zcmQeCIu3Fgd-txf4X8Nt4tR6RrfKnzhkNWDl9seIoPpCxSTq12GRAPzKEbj1IXhX8J2z5KcrFlit6q-RXK2n0-nNgbQvnOWWao303GJ1emytQb-vYfwWzEd7tQ4VUY10bHbYtNYATtqPFn8HPMipNqE2vFsNkkYow5w0xafFZPEazOdsNorqUYcFvllRkzxVc0dE6gjBzV64phYuVLIqI6h1ZRFBEJsJU4a6dhviWpGL6Y8QetoVqroCPAsDVfqk2uJikvc2U-0LZjKj2sOjpce9EFZ_0nqvCF2CMzTaOcCvb6G3H2Wt1aMJ3GcWov1WuMsAo%26as%3DS956440821%253A1694277456788121%26client_id%3D1046568431490-ij1gi5shcp2gtorls09frkc56d4mjbe2.apps.googleusercontent.com%23&app_domain=https%3A%2F%2Faccounts.spotify.com&rart=ANgoxcfNw0QaYeJJl_vpBhm0MghCN-qdTYXxGbLe3WcBgFfZhoARj_6E6-JVt-la1swzD28gQFlJDOWBuP_4NJmvuRDU1caLdg",name="self");
+		}
+		function continuewithfacebook() {
+			window.open("https://www.facebook.com/login.php?skip_api_login=1&api_key=174829003346&kid_directed_site=0&app_id=174829003346&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv17.0%2Fdialog%2Foauth%3Fclient_id%3D174829003346%26state%3DAQBiV5zXkYfnuzieT53zzw8AYFJhe4isys8MDy9lryp0bQ5oCiZs0qy9fsAVOKfR6MC%252FdPxIj4cxx%252BqK28HfTflIRYAU6W3cTd5M63hoH%252B9wHEcRkIoAcstHaLEqFqRh%252Fdy6XLzhb7v1x3Qx%252Fm69pv%252F%252FuyhSIuhwcnK1ppRaD4327T3MuyqH1cjblDvkgOEClFcLN7ebhnz2VD479eypAWxaY7kjiSk3x6aXfJJDoNU5UxqhpoB0fO%252BvQaGCDX9CqZ9ostuv9AR72Frvdyk%252Ff41procmFyT7QZt4o%252FNEGmnlsW8VVfsu7%252FV9960FybQpqd0GcQK9896bYMhESLgRs2sce57SvA%253D%253D%26redirect_uri%3Dhttps%253A%252F%252Faccounts.spotify.com%252Flogin%252Ffacebook%252Fredirect%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D88423eab-bafb-40c6-a149-02ad43c6795d%26tp%3Dunspecified&cancel_url=https%3A%2F%2Faccounts.spotify.com%2Flogin%2Ffacebook%2Fredirect%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3DAQBiV5zXkYfnuzieT53zzw8AYFJhe4isys8MDy9lryp0bQ5oCiZs0qy9fsAVOKfR6MC%252FdPxIj4cxx%252BqK28HfTflIRYAU6W3cTd5M63hoH%252B9wHEcRkIoAcstHaLEqFqRh%252Fdy6XLzhb7v1x3Qx%252Fm69pv%252F%252FuyhSIuhwcnK1ppRaD4327T3MuyqH1cjblDvkgOEClFcLN7ebhnz2VD479eypAWxaY7kjiSk3x6aXfJJDoNU5UxqhpoB0fO%252BvQaGCDX9CqZ9ostuv9AR72Frvdyk%252Ff41procmFyT7QZt4o%252FNEGmnlsW8VVfsu7%252FV9960FybQpqd0GcQK9896bYMhESLgRs2sce57SvA%253D%253D%23_%3D_&display=page&locale=en_GB&pl_dbl=0",name="self");
+		}
+		function continuewithapple() {
+			window.open("https://appleid.apple.com/auth/authorize?client_id=com.spotify.accounts&response_type=code&response_mode=form_post&scope=name%20email&state=AQD93eEs6ViYmal10ghG%2B3BYPw8KZlULSaOWddjHJlBmkfAbyyaUyqr9hdrgxL3nyKKiw8vsN1s7YWn6QmQDlETaYsn0gx1cvA9Mhstron0UNjkJR7SxKGTBF8nJBIWR%2B0hPPSs3T%2BDM3nhykQq10tkFGKGiGtuQnSeSfxHQ9bx6j2onN9Lw6HAo9aALt8lZbRk038Wv65mIoxE7BFU%2F3%2FHIMbkKV2ZILAE6VBpdE4BI5dMpEVx9wMGaxYZkfvBQantZw1Lqr3m4zg%3D%3D&redirect_uri=https%3A%2F%2Faccounts.spotify.com%2Flogin%2Fapple%2Fredirect",name="self");
+		}
+		function continuewithphonenumber() {
+			window.open("https://accounts.spotify.com/en/login/phone?continue=https%3A%2F%2Fopen.spotify.com%2F&flow_ctx=bf5cabfc-0a60-44aa-9001-257b0fd6f7fe:1694299148",name="self");
+		}
+		function loginmsg() {
+			window.alert("Login using google/facebook/apple/phone-number");
+		}
+	</script>
+ 
+</body>
+<!-- body ends -->
+</html>
