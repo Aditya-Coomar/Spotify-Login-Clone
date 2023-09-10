@@ -7,3 +7,6 @@ Clone of Spotify Login Page
 3. Can login to Spotify using Apple ID
 4. Can login to Spotify using Phone-number
 5. Signup to Spotify
+
+
+To access the site - **https://login-spotify-clone.netlify.app/**
